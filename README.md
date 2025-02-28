@@ -16,8 +16,9 @@ An example of the training can be found in training/warm_up/training.py where it
 An example of generating text in probabilistic manner (temperature) can be found in testing/warm_up/testing.py, here is an example from a short training session with 10000 stories, 8 heads, dk=16, dm=128, 4 layers and 100 epochs,
 
 Prompt: "Once upon a time in an enchanted"
-Generated text: Generated story: Once upon a time in an enchanted forest, there was a little boat. The boat sailed every day swimming in the water, swimming in the water.
+
+Generated story: "Once upon a time in an enchanted forest, there was a little boat. The boat sailed every day swimming in the water, swimming in the water.
 One day, a little girl saw the most beautiful boat and thought it was so beautiful. She wanted to pick it up a plastic, so it flapped as it fluttered into'.
-The little girl was so excited. She wanted to try it out of the water, but the little girl was too heavy for her to her parents.
+The little girl was so excited. She wanted to try it out of the water, but the little girl was too heavy for her to her parents."
 
 😆 okay it's not the best, but this was just to test.
