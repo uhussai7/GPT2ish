@@ -17,8 +17,12 @@ An example of generating text in probabilistic manner (temperature) can be found
 
 Prompt: "Once upon a time in an enchanted"
 
-Generated story: "Once upon a time in an enchanted forest, there was a little boat. The boat sailed every day swimming in the water, swimming in the water.
+Generated story 1: "Once upon a time in an enchanted forest, there was a little boat. The boat sailed every day swimming in the water, swimming in the water.
 One day, a little girl saw the most beautiful boat and thought it was so beautiful. She wanted to pick it up a plastic, so it flapped as it fluttered into'.
 The little girl was so excited. She wanted to try it out of the water, but the little girl was too heavy for her to her parents."
+
+Generated story 2: Once upon a time in an enchanted forest, there was a little bunny. The bunny loved to hop in the garden with his furry pear. One day, the bunny decided to go for a walk. He hopped and hopped, looking for he met a frog.
+"Hello!", he said. "Can I have a home, enormous day of sleep now."
+The bunny hopped onto the morning and hopped out of the bear found a candle and it was shining brightly. The old, the sun began to set.
 
 😆 okay it's not the best, but this was just to test.
