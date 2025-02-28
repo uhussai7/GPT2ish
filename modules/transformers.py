@@ -1,6 +1,9 @@
 import torch
 from torch import nn
 import torch.nn.functional as F
+import lightning as L
+from torch import nn, optim
+
 
 class SelfAttention(nn.Module):
     def __init__(self, dm, dk, N_max, h=1):
@@ -139,3 +142,31 @@ class LastFeedForward(nn.Module):
 
     def forward(self,x):
         return self.fc2(F.gelu(self.fc1(x)))
+    
+
+class GPT2Lightning(L.LightningModule):
+    def __init__(self, dm, dk, N, h=1, vocab_size=50000, n_layers=2, learning_rate=5e-5):
+        super(GPT2Lightning, self).__init__()
+        self.save_hyperparameters()
+        self.model = GPT2(dm, dk, N, h, vocab_size, n_layers)
+        self.learning_rate = learning_rate
+
+    def forward(self, input_ids, mask=None):
+        return self.model(input_ids, mask)
+
+    def training_step(self, batch, batch_idx):
+        input_ids, labels = batch
+        logits = self(input_ids)
+        loss = F.cross_entropy(logits.view(-1, self.hparams.vocab_size), labels.view(-1))
+        self.log('train_loss', loss)
+        return loss
+
+    def validation_step(self, batch, batch_idx):
+        input_ids, labels = batch
+        logits = self(input_ids)
+        loss = F.cross_entropy(logits.view(-1, self.hparams.vocab_size), labels.view(-1))
+        self.log('val_loss', loss)
+        return loss
+
+    def configure_optimizers(self):
+        return optim.Adam(self.parameters(), lr=self.learning_rate)

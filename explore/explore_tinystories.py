@@ -18,7 +18,7 @@ dm=128
 dk=16
 N=128
 h=8
-n_layers =4
+n_layers=4
 
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 vocab_size=tokenizer.vocab_size
